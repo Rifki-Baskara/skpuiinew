@@ -73,7 +73,7 @@ class AktivitasKemahasiswaanController extends Controller
             'jenjang_pendidikan.required' => 'Jenjang Pendidikan Harus Diisi'
         ]);
         $domain->update ([
-            'domain_profil_lulusan_nama' =>$request->nama,
+            // 'domain_profil_lulusan_nama' =>$request->nama,
             'domain_profil_lulusan_nama' => $request->domain_profil_lulusan_nama,
             'aktivitas_kemahasiswaan' => $request->aktivitas_kemahasiswaan,
             'bukti_kegiatan' => $request->bukti_kegiatan,

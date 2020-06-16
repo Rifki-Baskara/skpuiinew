@@ -56,36 +56,15 @@
                                                             </tr>
                                                         </thead>
                                                         <tbody>
+                                                            @foreach($tampilSkpWajib as $datawajib)
+                                                            
                                                             <tr>
-                                                                <td>1</td>
-                                                                <td>Bakso</td>
-                                                                <td>12.000</td>
-                                                                <td>1</td>
+                                                                <td>{{$loop->iteration}}</td>
+                                                                <td>{{$datawajib->aktivitas_kemahasiswaan}}</td>
+                                                                <td>{{$datawajib->skp_wajib_nama_kegiatan}}</td>
+                                                                <td>{{$datawajib->poin_skp}}</td>
                                                             </tr>
-                                                            <tr>
-                                                                <td>2</td>
-                                                                <td>Mie Goreng</td>
-                                                                <td>7.000</td>
-                                                                <td>1</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>3</td>
-                                                                <td>Nasi Goreng</td>
-                                                                <td>15.000</td>
-                                                                <td>1</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>4</td>
-                                                                <td>Sate Padang</td>
-                                                                <td>17.000</td>
-                                                                <td>1</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>5</td>
-                                                                <td>Nasi Soto</td>
-                                                                <td>20.000</td>
-                                                                <td>1</td>
-                                                            </tr>
+                                                            @endforeach
                                                         </tbody>
                                                     </table>
                                                 </div>
@@ -111,50 +90,21 @@
                                                                 <th>Nama Kegiatan</th>
                                                                 <th>Waktu Pelaksanaan</th>
                                                                 <th>Status</th>
-                                                                <th>Poin SKP</th>
                                                                 <th>Aksi</th>
                                                             </tr>
                                                         </thead>
                                                         <tbody>
+                                                            @foreach($pengajuanPilihan as $data)
                                                             <tr>
-                                                                <td>1</td>
-                                                                <td>Pelatihan</td>
-                                                                <td>12-02-2019</td>
-                                                                <td>Terverifikasi</td>
-                                                                <td>5</td>
-                                                                <td></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>2</td>
-                                                                <td>Pelatihan</td>
-                                                                <td>12-02-2019</td>
-                                                                <td>Terverifikasi</td>
-                                                                <td>5</td>
-                                                                <td></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>3</td>
-                                                                <td>Pelatihan</td>
-                                                                <td>12-02-2019</td>
-                                                                <td>Terverifikasi</td>
-                                                                <td>5</td>
-                                                                <td></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>4</td>
-                                                                <td>Pelatihan</td>
-                                                                <td>12-02-2019</td>
-                                                                <td>Terverifikasi</td>
-                                                                <td>5</td>
-                                                                <td></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>5</td>
-                                                                <td>Pelatihan</td>
-                                                                <td>12-02-2019</td>
-                                                                <td>Terverifikasi</td>
-                                                                <td>5</td>
-                                                                <td></td>
+                                                                <td>{{$loop->iteration}}</td>
+                                                                <td>{{$data->nama_kegiatan}}</td>
+                                                                <td>{{$data->tanggal_mulai}}</td>
+                                                                <td>{{$data->status}}</td>
+                                                                <td>
+											                        <a class="btn btn-link" href="/mahasiswa/laporan/edit/{{ $data->id }}"><i class="fa fa-pencil" style="color:#093697"></i></a>
+											                        <a class="btn btn-link" href="/mahasiswa/laporan/show/{{ $data->id }}"><i class="fa fa-eye" style="color:#093697"></i></a>
+										                        </td>
+                                                            @endforeach   
                                                             </tr>
                                                         </tbody>
                                                     </table>
@@ -167,7 +117,7 @@
                         </div>
                     </div>
                 </div>
-            </div><!-- /# column -->
+            </div>
         </div>
     </div>
 

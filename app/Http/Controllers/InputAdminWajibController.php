@@ -42,7 +42,7 @@ class InputAdminWajibController extends Controller
         $dataMhs->mahasiswa_nama = $row[0];
         $dataMhs->mahasiswa_username = $row[1];
         $dataMhs->jenjang_pendidikan = $request->jenjang_pendidikan;
-        $dataMhs->nama_kegiatan = $request->nama_kegiatan;
+        $dataMhs->skp_wajib_nama_kegiatan = $request->skp_wajib_nama_kegiatan;
         $dataMhs->poin_skp = $request->poin_skp;
         $dataMhs->save();
         }

@@ -20,6 +20,69 @@ Route::get('/login', 'LoginController@index')->middleware('guest');
 Route::post('/login/kirimdata', 'LoginController@login');
 Route::get('/logout', 'LoginController@logout');
 
+//SKP Prodi
+    //LandingPg
+Route::get('/prodi', 'SKPProdiLandingPgController@index');
+    //Peserta Kegiatan SKP
+Route::get('/prodi/peserta', 'SKPProdiPesertaController@index');
+Route::get('/prodi/peserta/show/{skpwajib}', 'SKPProdiPesertaController@show');
+Route::get('/prodi/peserta/show/{skpwajib}/createW', 'SKPProdiPesertaController@createW');
+Route::post('/prodi/peserta/show/{skpwajib}/storeW', 'SKPProdiPesertaController@storeW');
+Route::get('/prodi/peserta/createP', 'SKPProdiPesertaController@createP');
+    //Pengajuan SKP Mahasiswa
+Route::get('/prodi/pengajuan', 'SKPProdiPengajuanController@index');
+Route::get('/prodi/pengajuan/create', 'SKPProdiPengajuanController@create');
+    //Rekapitulasi
+Route::get('/prodi/rekapitulasi', 'SKPProdiRekapitulasiController@index');
+
+//SKP Non Prodi
+    //Landing Pg
+Route::get('/nonprodi', 'SKPNonProdiLandingPgController@index');
+    //Master Aktivitas
+Route::get('/nonprodi/master', 'SKPNonProdiMasterController@index');
+Route::get('/nonprodi/master/create', 'SKPNonProdiMasterController@create');
+Route::post('/nonprodi/master/store', 'SKPNonProdiMasterController@store');
+Route::get('/nonprodi/master/edit/{id}', 'SKPNonProdiMasterController@edit');
+Route::post('/nonprodi/master/update/{id}', 'SKPNonProdiMasterController@update');
+Route::get('/nonprodi/master/delete/{id}', 'SKPNonProdiMasterController@delete');
+    //Peserta Kegiatan
+Route::get('/nonprodi/peserta', 'SKPNonProdiPesertaController@index');
+Route::get('/nonprodi/peserta/show/{skpwajib}', 'SKPNonProdiPesertaController@show');
+Route::get('/nonprodi/peserta/show/{skpwajib}/create', 'SKPNonProdiPesertaController@create');
+Route::post('/nonprodi/peserta/show/{skpwajib}/store', 'SKPNonProdiPesertaController@store');
+//Route::get('/nonprodi/peserta/tambah', 'SKPNonProdiPesertaController@tambah');
+
+//SKP Super Admin
+    //Landing Page
+Route::get('/superadmin', 'SKPSuperAdminLandingPgController@index');
+    //Master Domain
+Route::get('/superadmin/masterD', 'SKPSuperAdminMasterDomainController@index');
+Route::get('/superadmin/masterD/create', 'SKPSuperAdminMasterDomainController@create');
+Route::post('/superadmin/masterD/store', 'SKPSuperAdminMasterDomainController@store');
+Route::get('/superadmin/masterD/edit/{id}', 'SKPSuperAdminMasterDomainController@edit');
+Route::post('/superadmin/masterD/update/{id}', 'SKPSuperAdminMasterDomainController@update');
+Route::get('/superadmin/masterD/delete/{id}', 'SKPSuperAdminMasterDomainController@delete');
+    //Master Aktivitas
+Route::get('/superadmin/masterA', 'SKPSuperAdminMasterAktivitasController@index');
+Route::get('/superadmin/masterA/createW', 'SKPSuperAdminMasterAktivitasController@createW');
+Route::post('/superadmin/masterA/storeW', 'SKPSuperAdminMasterAktivitasController@storeW');
+Route::get('/superadmin/masterA/editW/{id}', 'SKPSuperAdminMasterAktivitasController@editW');
+Route::post('/superadmin/masterA/updateW/{id}', 'SKPSuperAdminMasterAktivitasController@updateW');
+Route::get('/superadmin/masterA/deleteW/{id}', 'SKPSuperAdminMasterAktivitasController@deleteW');
+Route::get('/superadmin/masterA/createP', 'SKPSuperAdminMasterAktivitasController@createP');
+Route::post('/superadmin/masterA/storeP', 'SKPSuperAdminMasterAktivitasController@storeP');
+Route::get('/superadmin/masterA/editP/{id}', 'SKPSuperAdminMasterAktivitasController@editP');
+Route::post('/superadmin/masterA/updateP/{id}', 'SKPSuperAdminMasterAktivitasController@updateP');
+Route::get('/superadmin/masterA/deleteP/{id}', 'SKPSuperAdminMasterAktivitasController@deleteP');
+    //Peserta Kegiatan
+Route::get('/superadmin/peserta', 'SKPSuperAdminPesertaController@index');
+Route::get('/superadmin/peserta/show/{skpwajib}', 'SKPSuperAdminPesertaController@show');
+Route::get('/superadmin/peserta/show/{skpwajib}/createW', 'SKPSuperAdminPesertaController@createW');
+Route::post('/superadmin/peserta/show/{skpwajib}/storeW', 'SKPSuperAdminPesertaController@storeW');
+
+
+
+
 //ADMIN SKP WAJIB
 Route::get('/adminskpwajib', 'AdminSKPWajibController@landingPg');
 Route::get('/adminskpwajib/infoskpwajib/', 'AdminSKPWajibController@infoSKPWajib');

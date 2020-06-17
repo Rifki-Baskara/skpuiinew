@@ -1,4 +1,4 @@
-@extends('layouts.LYadminSkpWajib')
+@extends('layouts.LySKPSuperAdmin')
 
 @section('content')
 
@@ -9,9 +9,8 @@
                 <div class="page-header float-left">
                     <div class="page-title">
                         <ol class="breadcrumb text-left">
-                            <li><a href="#"><i class="menu-icon fa fa-home"></i> </a></li>
-                            <li><a href="/adminskpwajib">SKPUII</a></li>
-                            <li><a href="/adminskpwajib/input">Input</a></li>
+                            <li><a href="/superadmin"><i class="menu-icon fa fa-home"></i> </a></li>
+                            <li><a href="/superadmin/peserta">Peserta Kegiatan SKP</a></li>
                             <li class="active">Daftar mahasiswa {{ $skpwajib->nama_kegiatan}} </li>
                         </ol>
                     </div>
@@ -28,7 +27,7 @@
                     <div class="card-body">
                         <h4 class="box-title">Daftar Mahasiswa {{ $skpwajib->nama_kegiatan}}</h4>
                         <hr color="yellow">
-                        <a class="btn btn-primary" href="/adminskpwajib/input/show/{{ $skpwajib->id }}/tambah">Tambah SKP</a>
+                        <a class="btn btn-primary" href="/superadmin/peserta/show/{{ $skpwajib->id }}/createW">Tambah Mahasiswa</a>
                         <br>
                         <br>
 						<!-- TABEL -->

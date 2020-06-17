@@ -1,4 +1,4 @@
-@extends('layouts.LYadminSkpWajib')
+@extends('layouts.LySKPProdi')
 
 @section('content')
 
@@ -9,10 +9,9 @@
                 <div class="page-header float-left">
                     <div class="page-title">
                         <ol class="breadcrumb text-left">
-                            <li><a href="#"><i class="menu-icon fa fa-home"></i> </a></li>
-                            <li><a href="/adminskpwajib">SKPUII</a></li>
-                            <li><a href="/adminskpwajib/input">Input</a></li>
-                            <li><a href="./">Daftar mahasiswa {{ $skpwajib->nama_kegiatan}}</a></li>
+                            <li><a href="/prodi"><i class="menu-icon fa fa-home"></i> </a></li>
+                            <li><a href="/prodi/peserta">Peserta Kegiatan SKP</a></li>
+                            <li><a href="./">Daftar mahasiswa {{ $skpwajib->nama_kegiatan}} </a></li>
                             <li class="active">Tambah Mahasiswa</li>
                         </ol>
                     </div>
@@ -52,12 +51,37 @@
 								</button>
 							</div>
                         @endif
-
-                        <form action="/adminskpwajib/input/show/{skpwajib}/store" method="POST" id="formInput">
+                        <div class="table-responsive">
+                            <table>
+                                <tr>
+                                    <th></th>
+                                    <th></th>
+                                </tr>
+                                <tr>
+                                    <td>Aktivitas Kemahasiswaan</td>
+                                    <td> : {{ $skpwajib->nama_aktivitas}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Nama Kegiatan</td>
+                                    <td> : {{ $skpwajib->nama_kegiatan}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Jenjang Pendidikan</td>
+                                    <td> : {{ $skpwajib->jenjang_pendidikan}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Poin SKP </td>
+                                    <td> : {{ $skpwajib->poin_skp}}</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <br>
+                        <form action="/prodi/peserta/show/{skpwajib}/storeW" method="POST" id="formInput">
                         @csrf
-                            <input type="hidden" name="jenjang_pendidikan" value="{{ $skpwajib->jenjang_pendidikan}}">
-                            <input type="hidden" name="skp_wajib_nama_kegiatan" value="{{ $skpwajib->nama_kegiatan}}">
-                            <input type="hidden" name="poin_skp" value="{{ $skpwajib->poin_skp}}">
+                            <input type="hidden" name="jenjang_pendidikan" value="{{ $skpwajib->jenjang_pendidikan}}" readonly>
+                            <input type="hidden" name="aktivitas_kemahasiswaan" value="{{ $skpwajib->nama_aktivitas}}" readonly>
+                            <input type="hidden" name="skp_wajib_nama_kegiatan" value="{{ $skpwajib->nama_kegiatan}}" readonly>
+                            <input type="hidden" name="poin_skp" value="{{ $skpwajib->poin_skp}}" readonly>
                             <input type="hidden" name="data" id="data">
                             <div id="spreadsheet"></div>
                             <div class="ui divider hidden"></div>

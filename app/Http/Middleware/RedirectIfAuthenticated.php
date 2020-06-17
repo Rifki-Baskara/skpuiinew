@@ -23,7 +23,7 @@ class RedirectIfAuthenticated
         if(Auth::guard('mahasiswa')->check()){
             return redirect('/mahasiswa');
         }
-
+        
         return $next($request);
     }
 }

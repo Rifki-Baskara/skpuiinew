@@ -34,12 +34,8 @@
 									<div class="table-responsive">
 										<table>
 											<tr>
-												<th></th>
-												<th></th>
-											</tr>
-											<tr>
 												<td>Pendalaman Nilai Dasar Islam (PNDI)</td>
-												<td> : 4/20</td>
+												<td> : {{$jumlahpndi}}/20</td>
 											</tr>
 											<tr>
 												<td>Pengembangan DIri Qurani (PDQ)</td>
@@ -51,7 +47,7 @@
 											</tr>
 											<tr>
 												<td>Pelatihan Kepemimpinan dan Dakwah (PKD)</td>
-												<td> : 4/20</td>
+												<td> : {{$jumlahpkd}}/20</td>
 											</tr>
 										</table>
 									</div>
@@ -65,24 +61,8 @@
 									<div class="table-responsive">
 										<table>
 											<tr>
-												<th></th>
-												<th></th>
-											</tr>
-											<tr>
-												<td>Pendalaman Nilai Dasar Islam (PNDI)</td>
-												<td> : 4/20</td>
-											</tr>
-											<tr>
-												<td>Pengembangan DIri Qurani (PDQ)</td>
-												<td> : 4/20</td>
-											</tr>
-											<tr>
-												<td>Pelatihan Pengembangan Diri (PPD) </td>
-												<td> : 4/20</td>
-											</tr>
-											<tr>
-												<td>Pelatihan Kepemimpinan dan Dakwah (PKD)</td>
-												<td> : 4/20</td>
+												<td>Perolehan SKP Pilihan</td>
+												<td> : {{$jumlah}}/20</td>
 											</tr>
 										</table>
 									</div>

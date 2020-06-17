@@ -53,18 +53,23 @@ Route::get('/adminskppilihan/aktivitas-kemahasiswaan/delete/{id}', 'AktivitasKem
 
 //DPA
 Route::get('/dpa', 'DPALaporanController@landingPg');
-    //Laporan
-Route::get('/dpa/laporan', 'DPALaporanController@index');
-    //Daftar Mhs
-Route::get('/dpa/daftar', 'DPADaftarMahasiswaController@index');
-
+Route::get('/dpa/laporan', 'DPALaporanController@skpmasuk');
+Route::get('/dpa/daftar', 'DPALaporanController@tampil');
+Route::get('/dpa/laporan/show/{id}', 'DPALaporanController@show');
+Route::post('/dpa/laporan/update/{id}', 'DPALaporanController@update');
+//laporan skp pilihan
 
 //MAHASISWA
 Route::get('/mahasiswa', 'MahasiswaController@dashboardSKPMahasiswa')->middleware('auth:mahasiswa');
-Route::get('/mahasiswa/laporan', 'MahasiswaController@laporanSKPMahasiswa')->middleware('auth:mahasiswa');
-Route::get('/mahasiswa/laporan/create', 'MahasiswaController@pengajuanSKPPilihan')->middleware('auth:mahasiswa');
+Route::get('/mahasiswa/laporan', 'PengajuanSkpPilihanController@laporan')->middleware('auth:mahasiswa');
+Route::post('/mahasiswa/laporan/store', 'PengajuanSkpPilihanController@store')->middleware('auth:mahasiswa');
+Route::get('/mahasiswa/laporan/create', 'PengajuanSkpPilihanController@create')->middleware('auth:mahasiswa');
+Route::get('/mahasiswa/laporan/edit/{id}', 'PengajuanSkpPilihanController@edit')->middleware('auth:mahasiswa');
+Route::post('/mahasiswa/laporan/update/{id}', 'PengajuanSkpPilihanController@update')->middleware('auth:mahasiswa');
+Route::get('/mahasiswa/laporan/show/{id}', 'PengajuanSkpPilihanController@show')->middleware('auth:mahasiswa');
+//Route::get('/mahasiswa/laporan-skp-mahasiswa/delete/{id}', 'PengajuanSkpPilihanController@delete')->middleware('auth:mahasiswa');
+Route::get('/mahasiswa/infoskp', 'InfoSkpPilihanController@infoskp')->middleware('auth:mahasiswa');
 
-Route::get('/mahasiswa/infoskp', 'MahasiswaController@infoSKPMahasiswa')->middleware('auth:mahasiswa');
 
 //Auth::routes();
 

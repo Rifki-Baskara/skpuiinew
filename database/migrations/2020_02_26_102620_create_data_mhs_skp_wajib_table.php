@@ -16,7 +16,7 @@ class CreateDataMhsSkpWajibTable extends Migration
         Schema::create('data_mhs_skp_wajib', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('mahasiswa_nama');
-            $table->string('mahasiswa_username')->unique();
+            $table->string('mahasiswa_username');
             $table->string('jenjang_pendidikan');
             $table->string('nama_kegiatan');
             $table->string('poin_skp');

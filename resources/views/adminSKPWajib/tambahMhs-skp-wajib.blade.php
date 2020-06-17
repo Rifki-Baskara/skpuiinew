@@ -56,7 +56,7 @@
                         <form action="/adminskpwajib/input/show/{skpwajib}/store" method="POST" id="formInput">
                         @csrf
                             <input type="hidden" name="jenjang_pendidikan" value="{{ $skpwajib->jenjang_pendidikan}}">
-                            <input type="hidden" name="nama_kegiatan" value="{{ $skpwajib->nama_kegiatan}}">
+                            <input type="hidden" name="skp_wajib_nama_kegiatan" value="{{ $skpwajib->nama_kegiatan}}">
                             <input type="hidden" name="poin_skp" value="{{ $skpwajib->poin_skp}}">
                             <input type="hidden" name="data" id="data">
                             <div id="spreadsheet"></div>

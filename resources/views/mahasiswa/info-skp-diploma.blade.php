@@ -53,36 +53,14 @@
                                                             </tr>
                                                         </thead>
                                                         <tbody>
+                                                            @foreach($infowajib as $datawajib)
                                                             <tr>
-                                                                <td>1</td>
-                                                                <td>Bakso</td>
-                                                                <td>12.000</td>
-                                                                <td>1</td>
+                                                                <td>{{$loop->iteration}}</td>
+                                                                <td>{{$datawajib->nama_aktivitas}}</td>
+                                                                <td>{{$datawajib->nama_kegiatan}}</td>
+                                                                <td>{{$datawajib->poin_skp}}</td>
                                                             </tr>
-                                                            <tr>
-                                                                <td>2</td>
-                                                                <td>Mie Goreng</td>
-                                                                <td>7.000</td>
-                                                                <td>1</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>3</td>
-                                                                <td>Nasi Goreng</td>
-                                                                <td>15.000</td>
-                                                                <td>1</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>4</td>
-                                                                <td>Sate Padang</td>
-                                                                <td>17.000</td>
-                                                                <td>1</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>5</td>
-                                                                <td>Nasi Soto</td>
-                                                                <td>20.000</td>
-                                                                <td>1</td>
-                                                            </tr>
+                                                            @endforeach
                                                         </tbody>
                                                     </table>
                                                 </div>
@@ -101,36 +79,15 @@
                                                             </tr>
                                                         </thead>
                                                         <tbody>
+                                                            @foreach($info as $data)
+
                                                             <tr>
-                                                                <td>1</td>
-                                                                <td>Bakso</td>
-                                                                <td>12.000</td>
-                                                                <td>1</td>
+                                                                <td>{{$loop->iteration}}</td>
+                                                                <td>{{$data->aktivitas_kemahasiswaan}}</td>
+                                                                <td>{{$data->domain_profil_lulusan_nama}}</td>
+                                                                <td>{{$data->bukti_kegiatan}}</td>
                                                             </tr>
-                                                            <tr>
-                                                                <td>2</td>
-                                                                <td>Mie Goreng</td>
-                                                                <td>7.000</td>
-                                                                <td>1</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>3</td>
-                                                                <td>Nasi Goreng</td>
-                                                                <td>15.000</td>
-                                                                <td>1</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>4</td>
-                                                                <td>Sate Padang</td>
-                                                                <td>17.000</td>
-                                                                <td>1</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>5</td>
-                                                                <td>Nasi Soto</td>
-                                                                <td>20.000</td>
-                                                                <td>1</td>
-                                                            </tr>
+                                                            @endforeach
                                                         </tbody>
                                                     </table>
                                                 </div> 

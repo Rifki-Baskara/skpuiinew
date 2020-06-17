@@ -43,7 +43,7 @@
 								</thead>
 								<tbody>
                                     @foreach ($dataMhs as $dM)
-                                        @if ($dM->nama_kegiatan != $skpwajib->nama_kegiatan)
+                                        @if ($dM->skp_wajib_nama_kegiatan != $skpwajib->nama_kegiatan)
                                             @continue
                                         @endif
 									<tr>

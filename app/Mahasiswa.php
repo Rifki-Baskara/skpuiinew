@@ -13,4 +13,8 @@ class Mahasiswa extends Model
     {
     	return $this->belongsToMany(SkpWajib::class);
     }
+
+    public function dpa(){
+    	return $this->belongsTo('App\Dpa');
+    }
 }

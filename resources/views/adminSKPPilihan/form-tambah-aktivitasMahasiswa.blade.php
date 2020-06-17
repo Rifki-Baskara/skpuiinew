@@ -72,7 +72,7 @@
                                 <div class="invalid-feedback"> {{$message}} </div>
                                 @enderror
                             </div>
-
+                            
                             <label for="jenjang_pendidikan" class="form-control-label">Jenjang Pendidikan</label>
                             <div class="form-group">
                                 <div class="form-check form-check-inline">

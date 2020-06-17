@@ -57,6 +57,17 @@ return [
             'provider' => 'mahasiswa',
             'hash' => false,
         ],
+
+        'dpa' => [
+            'driver' => 'session',
+            'provider' => 'dpa',
+        ],
+
+        'apidpa' => [
+            'driver' => 'token',
+            'provider' => 'dpa',
+            'hash' => false,
+        ],
     ],
 
     /*
@@ -84,6 +95,10 @@ return [
         'mahasiswa' => [
             'driver' => 'eloquent',
             'model' => App\Login_Mahasiswa::class,
+        ],
+        'dpa' => [
+            'driver' => 'eloquent',
+            'model' => App\Login_Dpa::class,
         ],
 
         // 'users' => [

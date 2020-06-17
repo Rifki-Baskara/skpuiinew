@@ -49,6 +49,8 @@
                                     @endforeach         
                                 </select>
                                 @error('domain_profil_lulusan_nama')
+
+                                
                                 <div class="invalid-feedback"> {{$message}} </div>
                                 @enderror
 							</div>
@@ -66,13 +68,7 @@
                                 <div class="invalid-feedback"> {{$message}} </div>
                                 @enderror
                             </div>
-                            <div class="form-group">
-                                <label for="poin_skp" class="form-control-label">Poin SKP</label>
-                                <input type="text" id="poin_skp" value="{{ $domain->poin_skp }}" placeholder="" class="form-control @error('poin_skp') is-invalid @enderror" name="poin_skp">
-                                @error('poin_skp')
-                                <div class="invalid-feedback"> {{$message}} </div>
-                                @enderror
-                            </div>
+
 
                             <label for="jenjang_pendidikan" class="form-control-label">Jenjang Pendidikan</label>
                             <div class="form-group">

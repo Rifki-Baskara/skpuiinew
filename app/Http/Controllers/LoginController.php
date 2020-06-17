@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Mahasiswa;
+use App\Dpa;
 
 class LoginController extends Controller {
 
@@ -13,13 +14,12 @@ class LoginController extends Controller {
     }
 
     public function login(Request $request) {
-        // $mahasiswa = Mahasiswa::attempt('username',$request->username)->attempt('password',$request->password)->get();
-        // if(count($mahasiswa)>0){
-        //     Auth::guard('mahasiswa')->LoginUsingId($mahasiswa[0]['id']);
-        //     return redirect('/mahasiswa');
-        // }
         if(Auth::guard('mahasiswa')->attempt(['username'=>$request->username, 'password'=>$request->password])){
             return redirect('/mahasiswa');
+        }
+        else if (Auth::guard('dpa')->attempt(['username'=>$request->username, 'password'=>$request->password])){
+            return redirect('/dpa');
+
         }
         else{
             return "Gagal Login";

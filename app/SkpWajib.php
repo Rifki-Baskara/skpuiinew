@@ -14,4 +14,5 @@ class SkpWajib extends Model
     {
     	return $this->belongsToMany(Mahasiswa::class);
     }
+
 }

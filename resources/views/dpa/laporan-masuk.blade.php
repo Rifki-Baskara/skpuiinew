@@ -33,17 +33,29 @@
 							<table id="bootstrap-data-table" class="table table-striped table-bordered">
 								<thead>
 									<tr>
-										<th>No</th>
+                                        <th>No</th>
+                                        <th>Jenjang</th>
 										<th>Nama Mahasiswa</th>
                                         <th>NIM</th>
                                         <th>Nama Kegiatan</th>
                                         <th>Waktu Pelaksanaan</th>
-                                        <th>Poin SKP</th>
                                         <th>Aksi</th>			
 									</tr>
 								</thead>
 								<tbody>
-                                    
+                                    @foreach ($skpmasuk as $data)
+                                    <tr>
+                                        <td>{{$loop->iteration}}</td>
+                                        <td>{{$data->jenjang}}</td>
+                                        <td>{{$data->nama_mhs}}</td>
+                                        <td>{{$data->nim}}</td>
+                                        <td>{{$data->nama_kegiatan}}</td>
+                                        <td>{{$data->tanggal_mulai}}</td>
+                                        <td>
+                                            <a class="btn btn-link" href="/dpa/laporan/show/{{ $data->id }}"><i class="fa fa-pencil" style="color:#093697"></i></a>
+                                        </td>
+                                    </tr>
+                                    @endforeach
 								</tbody>    
 							</table>
 						</div>

@@ -11,7 +11,7 @@
                         <ol class="breadcrumb text-left">
                             <li><a href="#"><i class="menu-icon fa fa-home"></i> </a></li>
                             <li><a href="/dpa">SKPUII</a></li>
-                            <li class="active">Daftar mahasiswa</li>
+                            <li class="active">Daftar Mahasiswa</li>
                         </ol>
                     </div>
                 </div>
@@ -33,16 +33,21 @@
 							<table id="bootstrap-data-table" class="table table-striped table-bordered">
 								<thead>
 									<tr>
-										<th>No</th>
-										<th>Nama Mahasiswa</th>
+                                        <th>No</th>
+                                        <th>Jenjang</th>
                                         <th>NIM</th>
-                                        <th>SKP Wajib</th>
-                                        <th>SKP Pilihan</th>
-                                        <th>Aksi</th>			
+										<th>Nama Mahasiswa</th>		
 									</tr>
 								</thead>
 								<tbody>
-                                    
+                                @foreach($daftarmhs as $datamhs)                        
+                                    <tr>
+                                        <td>{{$loop->iteration}}</td>
+                                        <td>{{$datamhs->jenjang_pendidikan}}</td>
+                                        <td>{{$datamhs->username}}</td>
+                                        <td>{{$datamhs->nama}}</td>
+                                    </tr>
+                                @endforeach
 								</tbody>    
 							</table>
 						</div>

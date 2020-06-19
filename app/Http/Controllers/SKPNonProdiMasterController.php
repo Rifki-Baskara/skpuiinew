@@ -43,7 +43,8 @@ class SKPNonProdiMasterController extends Controller
         $skpwajib->bahan_kajian = $request->bahan_kajian;
         $skpwajib->jenjang_pendidikan = $request->jenjang_pendidikan;
         $skpwajib->poin_skp = $request->poin_skp;
-        $skpwajib->penyelenggara = $request->penyelenggara;
+        //$skpwajib->penyelenggara = $request->penyelenggara;
+        $skpwajib->penyelenggara = implode(",",$request->penyelenggara);
 
         $skpwajib->save();
 
@@ -52,7 +53,9 @@ class SKPNonProdiMasterController extends Controller
     public function edit($id)
     {
         $skpwajib = SkpWajib::find($id);
-        return view('SKPNonProdi.SKPNonProdi-master-aktivitas-edit',compact('skpwajib'));
+        $finds = SkpWajib::whereId($id)->first();
+        $penyelenggara = explode(",", $finds->penyelenggara);
+        return view('SKPNonProdi.SKPNonProdi-master-aktivitas-edit',compact('skpwajib','penyelenggara'));
     }
     public function update(Request $request, $id)
     {
@@ -80,7 +83,8 @@ class SKPNonProdiMasterController extends Controller
             'bahan_kajian' =>$request->bahan_kajian,
             'jenjang_pendidikan' =>$request->jenjang_pendidikan,
             'poin_skp' =>$request->poin_skp,
-            'penyelenggara' =>$request->penyelenggara
+            //'penyelenggara' =>$request->penyelenggara
+            'penyelenggara' => implode(",",$request->penyelenggara)
         ]);
         return redirect('/nonprodi/master')->with('status','SKP Wajib Berhasil Diubah !');
     }

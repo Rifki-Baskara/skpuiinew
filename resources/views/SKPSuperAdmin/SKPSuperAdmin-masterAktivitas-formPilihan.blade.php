@@ -1,4 +1,4 @@
-@extends('layouts.LySKPSuperAdmin')
+@extends('layouts.LySKPSuperAdminNew')
 
 @section('content')
 
@@ -94,10 +94,10 @@
                                     <input class="form-check-input" type="checkbox" name="jenjang_pendidikan[]" value="Doktor">
                                     <label class="form-check-label" for="inlineCheckbox3">Doktor</label>
                                 </div>
-                                <div>
-                                    <a href="./" class="btn btn-secondary" >Cancel</a>
-                                    <button type="submit" class="btn btn-primary">Confirm</button>
-                                </div>
+                            </div>
+                            <div>
+                                <a href="./" class="btn btn-secondary" >Cancel</a>
+                                <button type="submit" class="btn btn-primary">Confirm</button>
                             </div>
                         </form>
 

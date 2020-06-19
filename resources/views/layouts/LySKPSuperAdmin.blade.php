@@ -83,9 +83,7 @@
                     <li class="{{ (request()->is('superadmin/peserta*')) ? 'active' : '' }}">
                         <a href="/superadmin/peserta"> <i class="menu-icon fa fa-table"></i>Peserta Kegiatan SKP</a>
                     </li>
-                    <li class="{{ (request()->is('prodi/rekapitulasi*')) ? 'active' : '' }}">
-                        <a href="#"> <i class="menu-icon fa fa-table"></i>Pengajuan SKP Mahasiswa</a>
-                    </li>
+                    
                     <li class="{{ (request()->is('prodi/rekapitulasi*')) ? 'active' : '' }}">
                         <a href="#"> <i class="menu-icon fa fa-table"></i>Rekapitulasi SKP</a>
                     </li>
@@ -195,7 +193,7 @@
 
                             <a class="nav-link" href="#"><i class="fa fa -cog"></i>Settings</a>
 
-                            <a class="nav-link" href="#"><i class="fa fa-power -off"></i>Logout</a>
+                            <a class="nav-link" href="/logout"><i class="fa fa-power -off"></i>Logout</a>
                         </div>
                     </div>
 
@@ -236,6 +234,9 @@
     <script src="{{ asset('assets/js/lib/data-table/buttons.colVis.min.js') }}"></script>
     <script src="{{ asset('assets/js/init/datatables-init.js') }}"></script>
     
+        <!-- Scripts Tabset -->
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
     <!--  Chart js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.7.3/dist/Chart.bundle.min.js"></script>

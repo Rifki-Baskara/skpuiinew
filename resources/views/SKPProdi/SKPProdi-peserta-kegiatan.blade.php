@@ -1,4 +1,4 @@
-@extends('layouts.LySKPProdi')
+@extends('layouts.LySKPProdiNew')
 
 @section('content')
 
@@ -50,7 +50,6 @@
                                                                 <th>Nama Kegiatan</th>
                                                                 <th>Jenjang Pendidikan</th>
                                                                 <th>Poin SKP</th>
-                                                                <th>Jumlah Mahasiswa</th>
                                                                 <th>Aksi</th>				
                                                             </tr>
                                                         </thead>
@@ -62,7 +61,6 @@
                                                                 <td>{{ $skpW->nama_kegiatan }}</td>
                                                                 <td>{{ $skpW->jenjang_pendidikan }}</td>
                                                                 <td>{{ $skpW->poin_skp }}</td>
-                                                                <td>{{ $dataMhs->count() }}</td>
                                                                 <td>
                                                                     <a href="/prodi/peserta/show/{{ $skpW->id }}"><i class="fa fa-user-plus" style="color:#093697"></i> </a>
                                                                 </td>
@@ -94,7 +92,7 @@
                                                         <br>
                                                     </div>
                                                     <div class="col-sm-6 text-right">
-                                                        <a class="btn btn-primary" href="/prodi/peserta/create" role="button">Tambah Kegiatan</a>
+                                                        <a class="btn btn-primary" href="/prodi/peserta/createP" role="button">Tambah Kegiatan</a>
                                                     </div>
                                                 </div>
                                                 <hr>

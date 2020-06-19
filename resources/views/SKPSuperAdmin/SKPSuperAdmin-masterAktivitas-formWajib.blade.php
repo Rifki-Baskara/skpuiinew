@@ -1,4 +1,4 @@
-@extends('layouts.LySKPSuperAdmin')
+@extends('layouts.LySKPSuperAdminNew')
 
 @section('content')
 
@@ -80,12 +80,25 @@
                                 <div class="invalid-feedback"> {{$message}} </div>
                                 @enderror
                             </div>
+                            
+                            <label for="penyelenggara" class="form-control-label">Penyelenggara</label>
                             <div class="form-group">
-                                <label for="penyelenggara" class="form-control-label">Penyelenggara</label>
-                                <input type="text" id="penyelenggara" value="{{ old ('penyelenggara')}}" placeholder="" class="form-control @error('penyelenggara') is-invalid @enderror" name="penyelenggara">
-                                @error('penyelenggara')
-                                <div class="invalid-feedback"> {{$message}} </div>
-                                @enderror
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" name="penyelenggara[]" value="Universitas">
+                                    <label class="form-check-label" for="inlineCheckbox1">Universitas</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" name="penyelenggara[]" value="Fakultas">
+                                    <label class="form-check-label" for="inlineCheckbox2">Fakultas</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" name="penyelenggara[]" value="Program Studi">
+                                    <label class="form-check-label" for="inlineCheckbox3">Program Studi</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" name="penyelenggara[]" value="Inisiatif Mahasiswa">
+                                    <label class="form-check-label" for="inlineCheckbox3">Inisiatif Mahasiswa</label>
+                                </div>
                             </div>
                             <div>
                                 <a href="./" class="btn btn-secondary" >Cancel</a>

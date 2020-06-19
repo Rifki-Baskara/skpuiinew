@@ -1,4 +1,4 @@
-@extends('layouts.LySKPSuperAdmin')
+@extends('layouts.LySKPSuperAdminNew')
 
 @section('content')
 

@@ -18,8 +18,8 @@ class MahasiswaController extends Controller
         }
         $pkd = DataMhsSkpWajib::where ('mahasiswa_username', Auth::guard('mahasiswa')->user()->username)->where ('skp_wajib_nama_kegiatan', 'like', 'PKD%' )->get();
         $jumlahpkd = 0;
-        foreach ($pndi as $pndijumlah) {
-            $jumlahpkd = $pndijumlah->poin_skp + $jumlahpkd;
+        foreach ($pkd as $pkdjumlah) {
+            $jumlahpkd = $pkdjumlah->poin_skp + $jumlahpkd;
         }
         $jumlahpilihan = PengajuanSkpPilihan::where ('nim', Auth::guard('mahasiswa')->user()->username)->get();
         $jumlah = 0;

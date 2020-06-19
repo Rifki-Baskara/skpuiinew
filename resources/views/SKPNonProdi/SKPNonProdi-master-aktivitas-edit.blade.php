@@ -1,4 +1,4 @@
-@extends('layouts.LySKPNonProdi')
+@extends('layouts.LySKPNonProdiNew')
 
 @section('content')
 
@@ -72,13 +72,29 @@
                                 <div class="invalid-feedback"> {{$message}} </div>
                                 @enderror
                             </div>
+                            <label for="penyelenggara" class="form-control-label">Penyelenggara</label>
                             <div class="form-group">
-                                <label for="penyelenggara" class="form-control-label">Penyelenggara</label>
-                                <input type="text" id="penyelenggara" value="{{$skpwajib->penyelenggara}}" placeholder="" class="form-control @error('penyelenggara') is-invalid @enderror" name="penyelenggara">
-                                @error('penyelenggara')
-                                <div class="invalid-feedback"> {{$message}} </div>
-                                @enderror
-							</div>
+                                <div class="form-check form-check-inline">
+                                    <label class="form-check-label">Universitas</label>
+                                    <input class="form-check-input" type="checkbox" name="penyelenggara[]" value="Universitas"
+                                    {{in_array("Universitas",$penyelenggara)?"checked":""}}>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <label class="form-check-label">Fakultas</label>
+                                    <input class="form-check-input" type="checkbox" name="penyelenggara[]" value="Fakultas"
+                                    {{in_array("Fakultas",$penyelenggara)?"checked":""}}>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <label class="form-check-label">Program Studi</label>
+                                    <input class="form-check-input" type="checkbox" name="penyelenggara[]" value="Program Studi"
+                                    {{in_array("Program Studi",$penyelenggara)?"checked":""}}>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <label class="form-check-label">Inisiatif Mahasiswa</label>
+                                    <input class="form-check-input" type="checkbox" name="penyelenggara[]" value="Inisiatif Mahasiswa"
+                                    {{in_array("Inisiatif Mahasiswa",$penyelenggara)?"checked":""}}>
+                                </div>
+                            </div>
 							<div>
 								<a href="../" class="btn btn-secondary" >Cancel</a>
 								<button type="submit" class="btn btn-primary">Confirm</button>

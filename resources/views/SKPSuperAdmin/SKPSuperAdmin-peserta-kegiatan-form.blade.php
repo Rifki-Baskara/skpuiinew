@@ -1,4 +1,4 @@
-@extends('layouts.LySKPSuperAdmin')
+@extends('layouts.LySKPSuperAdminNew')
 
 @section('content')
 
@@ -81,7 +81,7 @@
                             <input type="hidden" name="jenjang_pendidikan" value="{{ $skpwajib->jenjang_pendidikan}}" readonly>
                             <input type="hidden" name="aktivitas_kemahasiswaan" value="{{ $skpwajib->nama_aktivitas}}" readonly>
                             <input type="hidden" name="skp_wajib_nama_kegiatan" value="{{ $skpwajib->nama_kegiatan}}" readonly>
-                            <input type=hidden" name="poin_skp" value="{{ $skpwajib->poin_skp}}" readonly>
+                            <input type="hidden" name="poin_skp" value="{{ $skpwajib->poin_skp}}" readonly>
                             <input type="hidden" name="data" id="data">
                             <div id="spreadsheet"></div>
                             <div class="ui divider hidden"></div>

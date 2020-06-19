@@ -77,9 +77,7 @@
                     <li class="{{ (request()->is('prodi/peserta*')) ? 'active' : '' }}">
                         <a href="/prodi/peserta"> <i class="menu-icon fa fa-bars"></i>Peserta Kegiatan SKP</a>
                     </li>
-                    <li class="{{ (request()->is('prodi/pengajuan*')) ? 'active' : '' }}">
-                        <a href="/prodi/pengajuan"> <i class="menu-icon fa fa-table"></i>Pengajuan SKP Mahasiswa</a>
-                    </li>
+
                     <li class="{{ (request()->is('prodi/rekapitulasi*')) ? 'active' : '' }}">
                         <a href="/prodi/rekapitulasi"> <i class="menu-icon fa fa-table"></i>Rekapitulasi SKP</a>
                     </li>

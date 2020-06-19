@@ -1,4 +1,4 @@
-@extends('layouts.LySKPSuperAdmin')
+@extends('layouts.LySKPSuperAdminNew')
 
 @section('content')
 
@@ -51,7 +51,6 @@
                                                                 <th>Nama Kegiatan</th>
                                                                 <th>Jenjang Pendidikan</th>
                                                                 <th>Poin SKP</th>
-                                                                <th>Jumlah Mahasiswa</th>
                                                                 <th>Aksi</th>				
                                                             </tr>
                                                         </thead>
@@ -63,7 +62,6 @@
                                                                 <td>{{ $skpW->nama_kegiatan }}</td>
                                                                 <td>{{ $skpW->jenjang_pendidikan }}</td>
                                                                 <td>{{ $skpW->poin_skp }}</td>
-                                                                <td>{{ $dataMhs->count() }}</td>
                                                                 <td>
                                                                     <a href="/superadmin/peserta/show/{{ $skpW->id }}"><i class="fa fa-user-plus" style="color:#093697"></i> </a>
                                                                 </td>

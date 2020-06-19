@@ -13,7 +13,7 @@ class SKPSUperAdminPesertaController extends Controller
     public function index()
     {
         $dataMhs = DataMhsSkpWajib::all();
-        $skpwajib = SkpWajib::all();
+        $skpwajib = SkpWajib::where('penyelenggara', 'like', '%Universitas%')->get();
         return view('SKPSuperAdmin.SKPSuperAdmin-peserta-kegiatan',compact('skpwajib','dataMhs'));
     }
 

@@ -16,69 +16,69 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/login', 'LoginController@index')->middleware('guest');
+Route::get('/login', 'LoginController@index')->middleware('guest','guest');
 Route::post('/login/kirimdata', 'LoginController@login');
 Route::get('/logout', 'LoginController@logout');
 
 //SKP Prodi
     //LandingPg
-Route::get('/prodi', 'SKPProdiLandingPgController@index');
+Route::get('/prodi', 'SKPProdiLandingPgController@index')->middleware('auth:fakultas');
     //Peserta Kegiatan SKP
-Route::get('/prodi/peserta', 'SKPProdiPesertaController@index');
-Route::get('/prodi/peserta/show/{skpwajib}', 'SKPProdiPesertaController@show');
-Route::get('/prodi/peserta/show/{skpwajib}/createW', 'SKPProdiPesertaController@createW');
-Route::post('/prodi/peserta/show/{skpwajib}/storeW', 'SKPProdiPesertaController@storeW');
-Route::get('/prodi/peserta/createP', 'SKPProdiPesertaController@createP');
+Route::get('/prodi/peserta', 'SKPProdiPesertaController@index')->middleware('auth:fakultas');
+Route::get('/prodi/peserta/show/{skpwajib}', 'SKPProdiPesertaController@show')->middleware('auth:fakultas');
+Route::get('/prodi/peserta/show/{skpwajib}/createW', 'SKPProdiPesertaController@createW')->middleware('auth:fakultas');
+Route::post('/prodi/peserta/show/{skpwajib}/storeW', 'SKPProdiPesertaController@storeW')->middleware('auth:fakultas');
+Route::get('/prodi/peserta/createP', 'SKPProdiPesertaController@createP')->middleware('auth:fakultas');
     //Pengajuan SKP Mahasiswa
-Route::get('/prodi/pengajuan', 'SKPProdiPengajuanController@index');
-Route::get('/prodi/pengajuan/create', 'SKPProdiPengajuanController@create');
+Route::get('/prodi/pengajuan', 'SKPProdiPengajuanController@index')->middleware('auth:fakultas');
+Route::get('/prodi/pengajuan/create', 'SKPProdiPengajuanController@create')->middleware('auth:fakultas');
     //Rekapitulasi
-Route::get('/prodi/rekapitulasi', 'SKPProdiRekapitulasiController@index');
+Route::get('/prodi/rekapitulasi', 'SKPProdiRekapitulasiController@index')->middleware('auth:fakultas');
 
 //SKP Non Prodi
     //Landing Pg
-Route::get('/nonprodi', 'SKPNonProdiLandingPgController@index');
+Route::get('/nonprodi', 'SKPNonProdiLandingPgController@index')->middleware('auth:dppai');
     //Master Aktivitas
-Route::get('/nonprodi/master', 'SKPNonProdiMasterController@index');
-Route::get('/nonprodi/master/create', 'SKPNonProdiMasterController@create');
-Route::post('/nonprodi/master/store', 'SKPNonProdiMasterController@store');
-Route::get('/nonprodi/master/edit/{id}', 'SKPNonProdiMasterController@edit');
-Route::post('/nonprodi/master/update/{id}', 'SKPNonProdiMasterController@update');
-Route::get('/nonprodi/master/delete/{id}', 'SKPNonProdiMasterController@delete');
+Route::get('/nonprodi/master', 'SKPNonProdiMasterController@index')->middleware('auth:dppai');
+Route::get('/nonprodi/master/create', 'SKPNonProdiMasterController@create')->middleware('auth:dppai');
+Route::post('/nonprodi/master/store', 'SKPNonProdiMasterController@store')->middleware('auth:dppai');
+Route::get('/nonprodi/master/edit/{id}', 'SKPNonProdiMasterController@edit')->middleware('auth:dppai');
+Route::post('/nonprodi/master/update/{id}', 'SKPNonProdiMasterController@update')->middleware('auth:dppai');
+Route::get('/nonprodi/master/delete/{id}', 'SKPNonProdiMasterController@delete')->middleware('auth:dppai');
     //Peserta Kegiatan
-Route::get('/nonprodi/peserta', 'SKPNonProdiPesertaController@index');
-Route::get('/nonprodi/peserta/show/{skpwajib}', 'SKPNonProdiPesertaController@show');
-Route::get('/nonprodi/peserta/show/{skpwajib}/create', 'SKPNonProdiPesertaController@create');
-Route::post('/nonprodi/peserta/show/{skpwajib}/store', 'SKPNonProdiPesertaController@store');
+Route::get('/nonprodi/peserta', 'SKPNonProdiPesertaController@index')->middleware('auth:dppai');
+Route::get('/nonprodi/peserta/show/{skpwajib}', 'SKPNonProdiPesertaController@show')->middleware('auth:dppai');
+Route::get('/nonprodi/peserta/show/{skpwajib}/create', 'SKPNonProdiPesertaController@create')->middleware('auth:dppai');
+Route::post('/nonprodi/peserta/show/{skpwajib}/store', 'SKPNonProdiPesertaController@store')->middleware('auth:dppai');
 //Route::get('/nonprodi/peserta/tambah', 'SKPNonProdiPesertaController@tambah');
 
 //SKP Super Admin
     //Landing Page
-Route::get('/superadmin', 'SKPSuperAdminLandingPgController@index');
+Route::get('/superadmin', 'SKPSuperAdminLandingPgController@index')->middleware('auth:superadmin');
     //Master Domain
-Route::get('/superadmin/masterD', 'SKPSuperAdminMasterDomainController@index');
-Route::get('/superadmin/masterD/create', 'SKPSuperAdminMasterDomainController@create');
-Route::post('/superadmin/masterD/store', 'SKPSuperAdminMasterDomainController@store');
-Route::get('/superadmin/masterD/edit/{id}', 'SKPSuperAdminMasterDomainController@edit');
-Route::post('/superadmin/masterD/update/{id}', 'SKPSuperAdminMasterDomainController@update');
-Route::get('/superadmin/masterD/delete/{id}', 'SKPSuperAdminMasterDomainController@delete');
+Route::get('/superadmin/masterD', 'SKPSuperAdminMasterDomainController@index')->middleware('auth:superadmin');
+Route::get('/superadmin/masterD/create', 'SKPSuperAdminMasterDomainController@create')->middleware('auth:superadmin');
+Route::post('/superadmin/masterD/store', 'SKPSuperAdminMasterDomainController@store')->middleware('auth:superadmin');
+Route::get('/superadmin/masterD/edit/{id}', 'SKPSuperAdminMasterDomainController@edit')->middleware('auth:superadmin');
+Route::post('/superadmin/masterD/update/{id}', 'SKPSuperAdminMasterDomainController@update')->middleware('auth:superadmin');
+Route::get('/superadmin/masterD/delete/{id}', 'SKPSuperAdminMasterDomainController@delete')->middleware('auth:superadmin');
     //Master Aktivitas
-Route::get('/superadmin/masterA', 'SKPSuperAdminMasterAktivitasController@index');
-Route::get('/superadmin/masterA/createW', 'SKPSuperAdminMasterAktivitasController@createW');
-Route::post('/superadmin/masterA/storeW', 'SKPSuperAdminMasterAktivitasController@storeW');
-Route::get('/superadmin/masterA/editW/{id}', 'SKPSuperAdminMasterAktivitasController@editW');
-Route::post('/superadmin/masterA/updateW/{id}', 'SKPSuperAdminMasterAktivitasController@updateW');
-Route::get('/superadmin/masterA/deleteW/{id}', 'SKPSuperAdminMasterAktivitasController@deleteW');
-Route::get('/superadmin/masterA/createP', 'SKPSuperAdminMasterAktivitasController@createP');
-Route::post('/superadmin/masterA/storeP', 'SKPSuperAdminMasterAktivitasController@storeP');
-Route::get('/superadmin/masterA/editP/{id}', 'SKPSuperAdminMasterAktivitasController@editP');
-Route::post('/superadmin/masterA/updateP/{id}', 'SKPSuperAdminMasterAktivitasController@updateP');
-Route::get('/superadmin/masterA/deleteP/{id}', 'SKPSuperAdminMasterAktivitasController@deleteP');
+Route::get('/superadmin/masterA', 'SKPSuperAdminMasterAktivitasController@index')->middleware('auth:superadmin');
+Route::get('/superadmin/masterA/createW', 'SKPSuperAdminMasterAktivitasController@createW')->middleware('auth:superadmin');
+Route::post('/superadmin/masterA/storeW', 'SKPSuperAdminMasterAktivitasController@storeW')->middleware('auth:superadmin');
+Route::get('/superadmin/masterA/editW/{id}', 'SKPSuperAdminMasterAktivitasController@editW')->middleware('auth:superadmin');
+Route::post('/superadmin/masterA/updateW/{id}', 'SKPSuperAdminMasterAktivitasController@updateW')->middleware('auth:superadmin');
+Route::get('/superadmin/masterA/deleteW/{id}', 'SKPSuperAdminMasterAktivitasController@deleteW')->middleware('auth:superadmin');
+Route::get('/superadmin/masterA/createP', 'SKPSuperAdminMasterAktivitasController@createP')->middleware('auth:superadmin');
+Route::post('/superadmin/masterA/storeP', 'SKPSuperAdminMasterAktivitasController@storeP')->middleware('auth:superadmin');
+Route::get('/superadmin/masterA/editP/{id}', 'SKPSuperAdminMasterAktivitasController@editP')->middleware('auth:superadmin');
+Route::post('/superadmin/masterA/updateP/{id}', 'SKPSuperAdminMasterAktivitasController@updateP')->middleware('auth:superadmin');
+Route::get('/superadmin/masterA/deleteP/{id}', 'SKPSuperAdminMasterAktivitasController@deleteP')->middleware('auth:superadmin');
     //Peserta Kegiatan
-Route::get('/superadmin/peserta', 'SKPSuperAdminPesertaController@index');
-Route::get('/superadmin/peserta/show/{skpwajib}', 'SKPSuperAdminPesertaController@show');
-Route::get('/superadmin/peserta/show/{skpwajib}/createW', 'SKPSuperAdminPesertaController@createW');
-Route::post('/superadmin/peserta/show/{skpwajib}/storeW', 'SKPSuperAdminPesertaController@storeW');
+Route::get('/superadmin/peserta', 'SKPSuperAdminPesertaController@index')->middleware('auth:superadmin');
+Route::get('/superadmin/peserta/show/{skpwajib}', 'SKPSuperAdminPesertaController@show')->middleware('auth:superadmin');
+Route::get('/superadmin/peserta/show/{skpwajib}/createW', 'SKPSuperAdminPesertaController@createW')->middleware('auth:superadmin');
+Route::post('/superadmin/peserta/show/{skpwajib}/storeW', 'SKPSuperAdminPesertaController@storeW')->middleware('auth:superadmin');
 
 
 

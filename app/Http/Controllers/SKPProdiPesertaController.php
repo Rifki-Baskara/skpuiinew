@@ -13,7 +13,7 @@ class SKPProdiPesertaController extends Controller
     public function index()
     {
         $dataMhs = DataMhsSkpWajib::all();
-        $skpwajib = SkpWajib::all();
+        $skpwajib = SkpWajib::where('penyelenggara', 'like', '%Fakultas%')->get();
         return view('SKPProdi.SKPProdi-peserta-kegiatan', compact('skpwajib','dataMhs'));
     }
     public function show(\App\SkpWajib $skpwajib)
@@ -43,9 +43,10 @@ class SKPProdiPesertaController extends Controller
 
         return redirect()->back()->with('status','Berhasil menyimpan data mahasiswa');
     }
+
     public function createP()
     {
-        return view('SKPProdi.SKPProdi-peserta-kegiatan-formWajib');
+        return view('SKPProdi.SKPProdi-peserta-kegiatan-formPilihan');
     }
     
 }

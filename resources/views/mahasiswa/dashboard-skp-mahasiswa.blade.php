@@ -39,15 +39,15 @@
 											</tr>
 											<tr>
 												<td>Pengembangan DIri Qurani (PDQ)</td>
-												<td> : 4/20</td>
+												<td> : </td>
 											</tr>
 											<tr>
 												<td>Pelatihan Pengembangan Diri (PPD) </td>
-												<td> : 4/20</td>
+												<td> : </td>
 											</tr>
 											<tr>
 												<td>Pelatihan Kepemimpinan dan Dakwah (PKD)</td>
-												<td> : {{$jumlahpkd}}/20</td>
+												<td> : {{$jumlahpkd}}</td>
 											</tr>
 										</table>
 									</div>

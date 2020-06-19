@@ -1,4 +1,4 @@
-@extends('layouts.LySKPProdi')
+@extends('layouts.LySKPProdiNew')
 
 @section('content')
 

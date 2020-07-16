@@ -75,9 +75,9 @@ class DPALaporanController extends Controller
     public function tampil()
     {
         $daftarmhs = Mahasiswa::where ('dpa_id', Auth::guard('dpa')->user()->id)
-        ->leftJoin('mahasiswaskpwajib','mahasiswa.username','mahasiswaskpwajib.mahasiswa_username')
-        ->leftJoin('pengajuan_skp_pilihan','mahasiswa.username','pengajuan_skp_pilihan.nim')
-        ->where('pengajuan_skp_pilihan.status', 'Disetujui')
+        // ->leftJoin('mahasiswaskpwajib','mahasiswa.username','mahasiswaskpwajib.mahasiswa_username')
+        // ->leftJoin('pengajuan_skp_pilihan','mahasiswa.username','pengajuan_skp_pilihan.nim')
+        // ->where('pengajuan_skp_pilihan.status', 'Disetujui')
         // ->orWhere()
         ->get();
         //dd($daftarmhs);
@@ -86,4 +86,6 @@ class DPALaporanController extends Controller
 
         return view('dpa.daftar-mahasiswa',compact('daftarmhs'));
     }
+
+    
 }

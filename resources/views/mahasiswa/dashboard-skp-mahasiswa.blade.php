@@ -40,15 +40,15 @@
 													</tr>
 													<tr>
 														<td>Pengembangan Diri Qurani (PDQ)</td>
-														<td> : {{$pdq !== null ? $pdq->poin_skp : '0'}}</td>
+														<td> : {{$pdq !== null ? $pdq->poin_skp : '0'}}/20</td>
 													</tr>
 													<tr>
 														<td>Pelatihan Pengembangan Diri (PPD) </td>
-														<td> : {{$ppd !== null ? $ppd->poin_skp : '0'}}</td>
+														<td> : {{$ppd !== null ? $ppd->poin_skp : '0'}}/5</td>
 													</tr>
 													<tr>
 														<td>Pelatihan Kepemimpinan dan Dakwah (PKD)</td>
-														<td> : {{$jumlahpkd}}</td>
+														<td> : {{$jumlahpkd}}/5</td>
 													</tr>
 											@endif
 											@if(Auth::guard('mahasiswa')->user()->jenjang_pendidikan == 'Diploma')

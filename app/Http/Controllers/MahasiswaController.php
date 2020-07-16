@@ -30,7 +30,6 @@ class MahasiswaController extends Controller
             foreach ($pilihansarjana as $jmls) {
                 $jumlahsarjana = $jmls->poin + $jumlahsarjana;
             }
-            // dd('hh');
         }
         else if (Auth::guard('mahasiswa')->user()->jenjang_pendidikan == 'Diploma')
         {
